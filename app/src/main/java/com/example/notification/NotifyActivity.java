@@ -2,15 +2,13 @@ package com.example.notification;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.yep.R;
+import com.example.lapace.R;
+
 
 public class NotifyActivity extends AppCompatActivity {
 
