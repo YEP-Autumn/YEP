@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="0.5"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="87dp"
+            android:layout_height="wrap_content"
+            android:text="Item By YEP" />
+        <Button
+            android:id="@+id/power_check"
+            android:text="权限检测"
+            android:layout_gravity="center"
+            android:layout_marginTop="170dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/notify_page"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:text="通知页面"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/download_page"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:text="下载"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</LinearLayout>
