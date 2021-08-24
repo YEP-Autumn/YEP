@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.yep.R;
+import com.example.lapace.R;
 
 public class VideoDownloadActivity extends AppCompatActivity {
 

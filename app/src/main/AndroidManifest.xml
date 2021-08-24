@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.yep">
+    package="com.example.lapace">
     <!-- 华为图标角标显示 -->
     <!-- <uses-permission android:name = "com.huawei.android.launcher.permission.CHANGE_BADGE " /> -->
     <uses-permission android:name="ANDROID.PERMISSION.VIBRATE" />
@@ -16,6 +16,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.YEP">
         <activity
             android:name="com.example.powercheck.PowerCheckActivity"
@@ -30,7 +31,7 @@
             android:name="com.example.notification.NotifyActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.lapace.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
