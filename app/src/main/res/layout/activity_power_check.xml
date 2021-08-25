@@ -17,8 +17,9 @@
         android:layout_height="wrap_content"/>
 
     <Button
+        android:id="@+id/alert_global"
         android:layout_gravity="center"
-        android:text=""
+        android:text="全局弹窗权限验证"
         android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
