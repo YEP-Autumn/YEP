@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class PowerCheckActivity extends AppCompatActivity {
+public class JurisdictionCheckActivity extends AppCompatActivity {
 
     private static final String TAG = "YEP";
 

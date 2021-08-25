@@ -6,42 +6,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.animation.PropertyAnimationActivity;
 import com.example.download.PictureDownloadActivity;
 import com.example.download.VideoDownloadActivity;
 import com.example.notification.NotifyActivity;
-import com.example.powercheck.PowerCheckActivity;
+import com.example.powercheck.JurisdictionCheckActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        findViewById(R.id.notify_page).setOnClickListener(this);
+        findViewById(R.id.download_page).setOnClickListener(this);
+        findViewById(R.id.jurisdiction_page).setOnClickListener(this);
+        findViewById(R.id.animator_page).setOnClickListener(this);
 
-        Button buttonNotify = findViewById(R.id.notify_page);
-        Button buttonDownload = findViewById(R.id.download_page);
-        Button buttonPower = findViewById(R.id.power_check);
-        buttonNotify.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, NotifyActivity.class);
-            startActivity(intent);
-        });
-
-        buttonDownload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alertChose();
-            }
-        });
-        buttonPower.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, PowerCheckActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
 
@@ -73,4 +56,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.notify_page:
+                Intent intentNP = new Intent(MainActivity.this, NotifyActivity.class);
+                startActivity(intentNP);
+                break;
+            case R.id.download_page:
+                alertChose();
+                break;
+            case R.id.jurisdiction_page:
+                Intent intentJP = new Intent(MainActivity.this, JurisdictionCheckActivity.class);
+                startActivity(intentJP);
+                break;
+            case R.id.animator_page:
+                Intent intentAP = new Intent(MainActivity.this, PropertyAnimationActivity.class);
+                startActivity(intentAP);
+        }
+
+    }
 }

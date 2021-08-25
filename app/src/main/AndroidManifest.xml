@@ -2,35 +2,29 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.lapace">
-
-    <!-- 系统默认拒绝的权限-->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /><!--全局弹窗-->
-
-
-
-
-    <!--运行时权限-->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /><!-- 读权限 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /><!-- 写权限 -->
-
-    <!--  安装时权限  -->
+    <!-- 系统默认拒绝的权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 全局弹窗 -->
+    <!-- 运行时权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- 读权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 写权限 -->
+    <!-- 安装时权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="ACCESS_NOTIFICATION_POLICY"/><!--通知显示在状态栏-->
-    <uses-permission android:name="EXPAND_STATUS_BAR"/><!--允许程序在状态栏扩展收缩-->
-    <uses-permission android:name="INSTALL_SHORTCUT"/><!--创建快捷方式-->
-    <uses-permission android:name="android.permission.VIBRATE" /> <!-- 震动 -->
+    <uses-permission android:name="ACCESS_NOTIFICATION_POLICY" /> <!-- 通知显示在状态栏 -->
+    <uses-permission android:name="EXPAND_STATUS_BAR" /> <!-- 允许程序在状态栏扩展收缩 -->
+    <uses-permission android:name="INSTALL_SHORTCUT" /> <!-- 创建快捷方式 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
 
-    <!-- 其他权限 -->
-    <!-- 华为图标角标显示 -->
-    <!-- <uses-permission android:name = "com.huawei.android.launcher.permission.CHANGE_BADGE " /> -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/icon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.YEP">
+        android:theme="@style/Theme.YEP"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name="com.example.animation.PropertyAnimationActivity"
+            android:exported="true" />
         <activity
             android:name="com.example.powercheck.PowerCheckActivity"
             android:exported="true" />
@@ -44,7 +38,7 @@
             android:name="com.example.notification.NotifyActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.lapace.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -18,10 +18,10 @@
             android:layout_height="wrap_content"
             android:text="Item By YEP" />
         <Button
-            android:id="@+id/power_check"
+            android:id="@+id/jurisdiction_page"
             android:text="权限检测"
             android:layout_gravity="center"
-            android:layout_marginTop="170dp"
+            android:layout_marginTop="120dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <Button
@@ -37,6 +37,13 @@
             android:layout_marginTop="50dp"
             android:layout_gravity="center"
             android:text="下载"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/animator_page"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:text="动画"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
