@@ -22,29 +22,47 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YEP"
         android:usesCleartextTraffic="true">
+<!--
+    //全屏显示 不要标题栏
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+    android:theme="@style/Theme.AppCompat.NoActionBar"
+-->
         <activity
-            android:name="com.example.animation.PropertyAnimationActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:name="com.example.lapace.OpenScreenActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:name="com.example.powercheck.JurisdictionCheckActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.powercheck.PowerCheckActivity"
-            android:exported="true" />
-        <activity
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:name="com.example.download.VideoDownloadActivity"
             android:exported="true" />
         <activity
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:name="com.example.download.PictureDownloadActivity"
             android:exported="true" />
         <activity
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:name="com.example.notification.NotifyActivity"
             android:exported="true" />
         <activity
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

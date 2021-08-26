@@ -2,4 +2,8 @@
 <resources>
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
     </style>
+    <style name="HideBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
 </resources>

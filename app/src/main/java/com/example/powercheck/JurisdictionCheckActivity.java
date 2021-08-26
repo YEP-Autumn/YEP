@@ -28,7 +28,6 @@ public class JurisdictionCheckActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_power_check);
 
-
         //读写权限验证的click事件
         findViewById(R.id.read_write).setOnClickListener(view -> {
             String[] checkList = new String[]{
@@ -37,7 +36,6 @@ public class JurisdictionCheckActivity extends AppCompatActivity {
             };
             checkSetJurisdiction(checkList);
         });
-
 
         //全局弹窗权限的click事件
         /**

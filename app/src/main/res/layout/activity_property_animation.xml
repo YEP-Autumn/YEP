@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="com.example.animation.PropertyAnimationActivity">
+    tools:context="com.example.lapace.OpenScreenActivity">
 
     <ImageView
-        android:id="@+id/text_view"
+        android:id="@+id/image_view"
         android:layout_gravity="center"
-        android:src="@mipmap/ic_icon"
+        android:src="@drawable/animation"
         android:text="动画页面"
         android:textSize="30dp"
         android:layout_width="wrap_content"
