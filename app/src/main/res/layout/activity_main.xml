@@ -40,10 +40,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <Button
-            android:id="@+id/animator_page"
+            android:id="@+id/contact_page"
             android:layout_marginTop="50dp"
             android:layout_gravity="center"
-            android:text="动画"
+            android:text="联系人"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 

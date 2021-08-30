@@ -17,6 +17,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.contact.ContactsActivity;
 import com.example.download.PictureDownloadActivity;
 import com.example.download.VideoDownloadActivity;
 import com.example.notification.NotifyActivity;
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.notify_page).setOnClickListener(this);
         findViewById(R.id.download_page).setOnClickListener(this);
         findViewById(R.id.jurisdiction_page).setOnClickListener(this);
-        findViewById(R.id.animator_page).setOnClickListener(this);
+        findViewById(R.id.contact_page).setOnClickListener(this);
 
     }
 
@@ -94,6 +96,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.jurisdiction_page:
                 Intent intentJP = new Intent(MainActivity.this, JurisdictionCheckActivity.class);
                 startActivity(intentJP);
+                break;
+            case R.id.contact_page:
+                Intent intentCP = new Intent(MainActivity.this, ContactsActivity.class);
+                startActivity(intentCP);
                 break;
         }
     }

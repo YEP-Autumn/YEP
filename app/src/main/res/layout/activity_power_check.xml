@@ -11,22 +11,38 @@
     <Button
         android:id="@+id/read_write"
         android:layout_gravity="center"
-        android:text="读写权限验证"
+        android:text="存储读写权限"
         android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/write_tv"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/alert_global"
         android:layout_gravity="center"
-        android:text="全局弹窗权限验证"
+        android:text="全局弹窗权限"
         android:layout_marginTop="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <Button
+    <TextView
+        android:id="@+id/alert_tv"
         android:layout_gravity="center"
-        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/write_contact"
+        android:layout_gravity="center"
+        android:text="联系人读写权限"
         android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/contact_tv"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
     <Button
