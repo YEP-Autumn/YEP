@@ -36,20 +36,9 @@ import java.util.Arrays;
 public class ContactsActivity extends AppCompatActivity{
     private static final String TAG = "YEP";
 
-    @RequiresApi(api = Build.VERSION_CODES.Q)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Uri uri = ContactsContract.Data.CONTENT_URI;
-        ContentResolver resolver = this.getContentResolver();
-        Cursor cursorUser = resolver.query(uri, new String[]{ContactsContract.CommonDataKinds.Phone._ID,
-                ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME, ContactsContract.CommonDataKinds.Phone.RAW_CONTACT_ID}, null, null, null);
-
-        while(cursorUser.moveToNext()) {
-            int id = cursorUser.getInt(0); // 按上面数组的声明顺序获取
-            String name = cursorUser.getString(1);
-            int rawContactsId = cursorUser.getInt(2);
-        }
 
     }
 
