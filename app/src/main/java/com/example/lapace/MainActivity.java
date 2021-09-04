@@ -110,9 +110,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.view_page:
                 Intent intentVP = new Intent(MainActivity.this, ViewPagerActivity.class);
                 startActivity(intentVP);
+                break;
             case R.id.view_page2:
                 Intent intentVP2 = new Intent(MainActivity.this, ViewPager2Activity.class);
                 startActivity(intentVP2);
+                break;
         }
     }
 
