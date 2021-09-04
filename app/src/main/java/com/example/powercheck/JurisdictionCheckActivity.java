@@ -54,9 +54,9 @@ public class JurisdictionCheckActivity extends AppCompatActivity {
             boolean bResult = shouldShowRequestPermissionRationale(Manifest.permission.SYSTEM_ALERT_WINDOW);
             if(bResult) Toast.makeText(this, "全局弹窗权限被拒绝(why we need this?)", Toast.LENGTH_SHORT).show();
 
-//            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-//                    Uri.parse("package:" + getPackageName()));
-//            startActivityForResult(intent,10);
+            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                    Uri.parse("package:" + getPackageName()));
+            startActivityForResult(intent,10);
 
         });
 
