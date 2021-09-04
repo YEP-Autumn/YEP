@@ -46,6 +46,13 @@
             android:text="对话框样式"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/recycler_page"
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:text="Recycler视图"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 </LinearLayout>

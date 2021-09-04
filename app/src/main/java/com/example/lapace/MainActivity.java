@@ -24,6 +24,7 @@ import com.example.download.PictureDownloadActivity;
 import com.example.download.VideoDownloadActivity;
 import com.example.notification.NotifyActivity;
 import com.example.powercheck.JurisdictionCheckActivity;
+import com.example.recycler.RecyclerViewActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.download_page).setOnClickListener(this);
         findViewById(R.id.jurisdiction_page).setOnClickListener(this);
         findViewById(R.id.alert_page).setOnClickListener(this);
+        findViewById(R.id.recycler_page).setOnClickListener(this);
 
     }
 
@@ -102,6 +104,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentCP = new Intent(MainActivity.this, AlertActivity.class);
                 startActivity(intentCP);
                 break;
+            case R.id.recycler_page:
+                Intent intentRP = new Intent(MainActivity.this, RecyclerViewActivity.class);
+                startActivity(intentRP);
         }
     }
 

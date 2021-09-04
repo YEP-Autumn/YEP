@@ -1,73 +1,70 @@
 package com.example.download;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
 
+import com.example.http.RetrofitInterface;
 import com.example.lapace.R;
+import com.example.listview.AdapterDemo;
 
-import java.io.IOException;
 
-import okhttp3.Call;
-import okhttp3.Callback;
+import java.util.Arrays;
+import java.util.List;
+
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.Response;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
-public class PictureDownloadActivity extends AppCompatActivity implements View.OnClickListener{
+public class PictureDownloadActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "YEP";
-    private String url = "http://192.168.0.25:8080/MyServlet_war_exploded/one";
+//    private String url = "https://tse1-mm.cn.bing.net/th/id/R-C.06ce7237f905735df8cfcff44d6a11fa?rik=YruL7uefVPKMiQ&riu=http%3a%2f%2fpic37.nipic.com%2f20140104%2f3970232_165407697000_2.jpg&ehk=AWvGiGn1EQJjR23BP%2f9G0i21Nqr64moWF%2fjETBK%2fjvY%3d&risl=&pid=ImgRaw&r=0";
+    private String url = "https://www.baidu.com/";
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture_download);
-
         findViewById(R.id.start_picture_download).setOnClickListener(this);
+        listView = findViewById(R.id.picture_list);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(PictureDownloadActivity.this, i + " " + l + " :)", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.start_picture_download:
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        getPicture();
-                    }
-                }).start();
+                List<String> list = Arrays.asList("0","1","2","3","4","5","6","7","8","9");
+                listView.setAdapter(new AdapterDemo(getApplicationContext(),list,Arrays.asList(R.drawable.icon)));
                 break;
         }
     }
-
-
-    private void getPicture(){
+    private Integer fun(){
         OkHttpClient okHttpClient = new OkHttpClient();
-        Request request = new Request.Builder().url("https://www.baidu.com").get().build();
-        okHttpClient.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+        Request.Builder builder = new Request.Builder()
+                .url("https://tse1-mm.cn.bing.net/th/id/R-C.06ce7237f905735df8cfcff44d6a11fa?rik=YruL7uefVPKMiQ&riu=http%3a%2f%2fpic37.nipic.com%2f20140104%2f3970232_165407697000_2.jpg&ehk=AWvGiGn1EQJjR23BP%2f9G0i21Nqr64moWF%2fjETBK%2fjvY%3d&risl=&pid=ImgRaw&r=0")
+                .get();
 
-            }
-
-            @Override
-            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-                Log.e(TAG, "onResponse: " + response.toString());
-            }
-        });
-
-
-//        new Retrofit.Builder()
-//                .baseUrl("https://www.taobao.com")
-//                .
-
+        return null;
     }
+
+
 }

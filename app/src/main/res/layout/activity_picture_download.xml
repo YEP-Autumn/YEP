@@ -44,6 +44,7 @@
         android:layout_weight="1"
         tools:context="com.example.download.PictureDownloadActivity">
         <ListView
+            android:id="@+id/picture_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 

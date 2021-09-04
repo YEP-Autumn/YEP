@@ -56,7 +56,7 @@ public class YEPNotification {
         manager.createNotificationChannel(channel);
         NotificationManagerCompat from = NotificationManagerCompat.from(context);
 
-//        //华为角标设置
+        // 华为角标设置
 //        if (mIsSupportedBade) {
 //            setBadgeNum(count);
 //        }

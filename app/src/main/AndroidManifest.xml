@@ -24,6 +24,9 @@
         android:theme="@style/Theme.YEP"
         android:usesCleartextTraffic="true">
         <activity
+            android:name="com.example.recycler.RecyclerViewActivity"
+            android:exported="true" />
+        <activity
             android:name="com.example.alert.AlertActivity"
             android:exported="true" />
         <activity
