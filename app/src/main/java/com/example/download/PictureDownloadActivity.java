@@ -9,9 +9,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.Adapter.AdapterDemo;
 import com.example.http.RetrofitInterface;
 import com.example.lapace.R;
-import com.example.listview.AdapterDemo;
 
 
 import java.util.Arrays;

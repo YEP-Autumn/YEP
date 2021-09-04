@@ -1,13 +1,14 @@
 package com.example.http;
 
-import java.util.List;
 
+import org.json.JSONObject;
+
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 
 public interface RetrofitInterface {
 
-    @GET("")
-    Call<List<Integer>> response(@Path("") String s);
+    @GET("api/data/Android/10/1")
+    Call<ResponseBody> response();
 }

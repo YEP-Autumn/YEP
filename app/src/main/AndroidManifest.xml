@@ -24,6 +24,12 @@
         android:theme="@style/Theme.YEP"
         android:usesCleartextTraffic="true">
         <activity
+            android:name="com.example.json.JsonActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.retrofit.ShowActivity"
+            android:exported="true" />
+        <activity
             android:name="com.example.recycler.RecyclerViewActivity"
             android:exported="true" />
         <activity

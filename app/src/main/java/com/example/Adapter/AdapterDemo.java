@@ -1,4 +1,4 @@
-package com.example.listview;
+package com.example.Adapter;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -30,12 +30,12 @@ public final class AdapterDemo extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return list.size();
+        return list == null ? 0 : list.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return list.get(i);
+        return list == null ? null : list.get(i);
     }
 
     @Override
@@ -54,7 +54,7 @@ public final class AdapterDemo extends BaseAdapter {
         }
         viewHolder = (ViewHolder) view.getTag();
         viewHolder.textView.setText(list.get(i));
-        viewHolder.imageView.setImageResource(listImg.get(0));
+        if(listImg != null) viewHolder.imageView.setImageResource(listImg.size() > i ? listImg.get(i) : listImg.get(0));
         return view;
 
     }

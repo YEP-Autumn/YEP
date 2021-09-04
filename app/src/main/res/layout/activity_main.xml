@@ -1,58 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:baselineAligned="false"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:baselineAligned="false">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_weight="0.5"
+        android:orientation="vertical"
         tools:context=".MainActivity">
 
         <TextView
-            android:layout_gravity="center"
             android:layout_width="87dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Item By YEP" />
+
         <Button
             android:id="@+id/jurisdiction_page"
-            android:text="权限检测"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="120dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:text="权限检测" />
+
         <Button
             android:id="@+id/notify_page"
-            android:layout_marginTop="50dp"
-            android:layout_gravity="center"
-            android:text="通知页面"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="通知页面" />
 
         <Button
             android:id="@+id/download_page"
-            android:layout_marginTop="50dp"
-            android:layout_gravity="center"
-            android:text="下载"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="下载" />
+
         <Button
             android:id="@+id/alert_page"
-            android:layout_marginTop="50dp"
-            android:layout_gravity="center"
-            android:text="对话框样式"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="对话框样式" />
+
         <Button
             android:id="@+id/recycler_page"
-            android:layout_marginTop="50dp"
-            android:layout_gravity="center"
-            android:text="Recycler视图"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="Recycler视图" />
+
 
     </LinearLayout>
 </LinearLayout>
