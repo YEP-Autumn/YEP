@@ -25,23 +25,21 @@ import com.example.download.VideoDownloadActivity;
 import com.example.notification.NotifyActivity;
 import com.example.powercheck.JurisdictionCheckActivity;
 import com.example.recycler.RecyclerViewActivity;
+import com.example.recycler.ViewPager2Activity;
+import com.example.recycler.ViewPagerActivity;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "YEP";
 
     private boolean canExit = false;
-    final Handler handler = new Handler(Looper.getMainLooper()){
+    final Handler handler = new Handler(Looper.getMainLooper()) {
         @Override
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
             canExit = false;
         }
     };
-
-
-
-
 
 
     @Override
@@ -55,14 +53,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.jurisdiction_page).setOnClickListener(this);
         findViewById(R.id.alert_page).setOnClickListener(this);
         findViewById(R.id.recycler_page).setOnClickListener(this);
+        findViewById(R.id.view_page).setOnClickListener(this);
+        findViewById(R.id.view_page2).setOnClickListener(this);
 
     }
 
     /**
      * 弹出框
      */
-    public void alertChose(){
-        View dialog_view = getLayoutInflater().inflate(R.layout.dialog_view,null);
+    public void alertChose() {
+        View dialog_view = getLayoutInflater().inflate(R.layout.dialog_view, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setIcon(R.mipmap.ic_white_icon)
                 .setTitle("下载图片or视频?")
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.notify_page:
                 Intent intentNP = new Intent(MainActivity.this, NotifyActivity.class);
                 startActivity(intentNP);
@@ -107,16 +107,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.recycler_page:
                 Intent intentRP = new Intent(MainActivity.this, RecyclerViewActivity.class);
                 startActivity(intentRP);
+            case R.id.view_page:
+                Intent intentVP = new Intent(MainActivity.this, ViewPagerActivity.class);
+                startActivity(intentVP);
+            case R.id.view_page2:
+                Intent intentVP2 = new Intent(MainActivity.this, ViewPager2Activity.class);
+                startActivity(intentVP2);
         }
     }
 
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(!canExit && keyCode == KeyEvent.KEYCODE_BACK){
+        if (!canExit && keyCode == KeyEvent.KEYCODE_BACK) {
             Toast.makeText(this, "再按一次退出", Toast.LENGTH_SHORT).show();
             canExit = true;
-            handler.sendEmptyMessageDelayed(0,3000);
+            handler.sendEmptyMessageDelayed(0, 3000);
             return true;
         }
         return super.onKeyDown(keyCode, event);

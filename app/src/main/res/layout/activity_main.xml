@@ -3,12 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:baselineAligned="false">
+    android:orientation="horizontal">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="0.5"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_marginTop="240dp"
+            android:id="@+id/view_page"
+            android:text="ViewPage"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center" />
+
+        <Button
+            android:layout_marginTop="40dp"
+            android:text="ViewPage2"
+            android:id="@+id/view_page2"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
         android:orientation="vertical"
         tools:context=".MainActivity">
 
@@ -57,7 +80,17 @@
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
             android:text="Recycler视图" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
     </LinearLayout>
 </LinearLayout>
