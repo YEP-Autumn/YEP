@@ -31,6 +31,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.squareup.okhttp3:logging-interceptor:+'
     implementation 'androidx.viewpager2:viewpager2:+'
     implementation 'com.fasterxml.jackson.core:jackson-databind:+'
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '+'

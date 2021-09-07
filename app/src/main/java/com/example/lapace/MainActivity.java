@@ -107,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.recycler_page:
                 Intent intentRP = new Intent(MainActivity.this, RecyclerViewActivity.class);
                 startActivity(intentRP);
+                break;
             case R.id.view_page:
                 Intent intentVP = new Intent(MainActivity.this, ViewPagerActivity.class);
                 startActivity(intentVP);

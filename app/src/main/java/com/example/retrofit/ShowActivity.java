@@ -1,12 +1,15 @@
 package com.example.retrofit;
 
+import android.media.audiofx.DynamicsProcessing;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ConcatAdapter;
 
 import com.example.http.RetrofitInterface;
+import com.example.lapace.BuildConfig;
 import com.example.lapace.R;
 
 import org.json.JSONArray;
@@ -16,7 +19,9 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.Optional;
 
+import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -26,7 +31,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ShowActivity extends AppCompatActivity {
 
     private ListView listView;
-    private String url = "http://gank.io/";
+    private String url = "https://www.baidu.com/";
     private String TAG = "YEP";
 
     @Override
@@ -38,9 +43,18 @@ public class ShowActivity extends AppCompatActivity {
     }
 
     private void fun() {
+        OkHttpClient.Builder okBuilder = new OkHttpClient.Builder();
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        if(BuildConfig.DEBUG){
+            okBuilder.addInterceptor(logging);
+        }
+
         Retrofit.Builder builder = new Retrofit.Builder()
                 .baseUrl(url)
-                .addConverterFactory(GsonConverterFactory.create());
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(okBuilder.build());
+
         Retrofit retrofit = builder.build();
         RetrofitInterface retrofitInterface = retrofit.create(RetrofitInterface.class);
         Call<ResponseBody> response = retrofitInterface.response();
@@ -48,18 +62,10 @@ public class ShowActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 try {
-                    JSONObject jsonObject = new JSONObject(response.body().string());
-                    jsonObject.optBoolean("error");
-                    JSONArray jsonArray = jsonObject.optJSONArray("results");
-                    int length = jsonArray.length();
-                    for (int i = 0; i < length; i++) {
-                        Log.e(TAG, "jsonArray: " + jsonArray.opt(i).toString());
-                    }
 
-                }catch (Exception e){
+                } catch (Exception e) {
 
                 }
-
             }
 
             @Override
