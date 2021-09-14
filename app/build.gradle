@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 30
 
     defaultConfig {
         applicationId "com.example.yep"
@@ -17,7 +17,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -28,9 +28,17 @@ android {
     buildFeatures {
         viewBinding true
     }
+    sourceSets {
+        main {
+            assets {
+                srcDirs 'src\\main\\assets'
+            }
+        }
+    }
 }
 
 dependencies {
+    implementation 'org.java-websocket:Java-WebSocket:1.5.2'
     implementation 'com.squareup.okhttp3:logging-interceptor:+'
     implementation 'androidx.viewpager2:viewpager2:+'
     implementation 'com.fasterxml.jackson.core:jackson-databind:+'

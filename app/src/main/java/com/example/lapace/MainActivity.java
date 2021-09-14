@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.alert.AlertActivity;
+import com.example.chat.ChatP2PActivity;
 import com.example.contact.ContactsActivity;
 import com.example.download.PictureDownloadActivity;
 import com.example.download.VideoDownloadActivity;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.recycler_page).setOnClickListener(this);
         findViewById(R.id.view_page).setOnClickListener(this);
         findViewById(R.id.view_page2).setOnClickListener(this);
+        findViewById(R.id.chat_page).setOnClickListener(this);
 
     }
 
@@ -115,6 +117,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.view_page2:
                 Intent intentVP2 = new Intent(MainActivity.this, ViewPager2Activity.class);
                 startActivity(intentVP2);
+                break;
+            case R.id.chat_page:
+                Intent intentC2P = new Intent(MainActivity.this, ChatP2PActivity.class);
+                startActivity(intentC2P);
                 break;
         }
     }

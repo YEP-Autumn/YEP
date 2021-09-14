@@ -24,6 +24,9 @@
         android:theme="@style/Theme.YEP"
         android:usesCleartextTraffic="true">
         <activity
+            android:name="com.example.chat.ChatP2PActivity"
+            android:exported="true" />
+        <activity
             android:name="com.example.recycler.ViewPager2Activity"
             android:exported="true" />
         <activity
@@ -55,40 +58,33 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.example.powercheck.JurisdictionCheckActivity"
             android:exported="true"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:launchMode="singleTop"/>
         <activity
             android:name="com.example.download.VideoDownloadActivity"
             android:exported="true"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:launchMode="singleTop" />
         <activity
             android:name="com.example.download.PictureDownloadActivity"
             android:exported="true"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:launchMode="singleTop"/>
         <activity
             android:name="com.example.notification.NotifyActivity"
             android:exported="true"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:launchMode="singleTop" />
         <activity
             android:name="com.example.demotest.DemoActivity"
             android:exported="true"
-            android:launchMode="singleTop"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:launchMode="singleTop" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:launchMode="singleInstance"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:launchMode="singleInstance"/>
     </application>
 
 </manifest>
