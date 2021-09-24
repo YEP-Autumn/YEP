@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    compileSdk 30
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.example.yep"
@@ -38,6 +38,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'org.java-websocket:Java-WebSocket:1.5.2'
     implementation 'com.squareup.okhttp3:logging-interceptor:+'
     implementation 'androidx.viewpager2:viewpager2:+'

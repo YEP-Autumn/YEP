@@ -3,8 +3,7 @@ package com.example.socketClient;
 import android.os.Message;
 import android.util.Log;
 
-import com.example.bean.ClientSendBean;
-import com.example.bean.ServerSendBean;
+import com.example.bean.Signalman;
 import com.example.chat.ChatHandler;
 import com.google.gson.Gson;
 
@@ -26,24 +25,24 @@ public class MsgHandler {
     }
 
     public void sendMsg(WebSocketClient webSocket, int s1, String s2) {
-        ClientSendBean clientSendBean = new ClientSendBean("SEND", s1, s2, secWebSocketKey);
-        String s = gson.toJson(clientSendBean);
+        Signalman Signalman = new Signalman("SEND", s1, s2, secWebSocketKey);
+        String s = gson.toJson(Signalman);
         webSocket.send(s);
     }
 
     public static void onMessage(String s) {
-        ServerSendBean serverSendBean = gson.fromJson(s, ServerSendBean.class);
-        if ("WELCOME".equals(serverSendBean.MODE)) {
+        Signalman Signalman = gson.fromJson(s, Signalman.class);
+        if ("WELCOME".equals(Signalman.MODE)) {
             Log.e(TAG, "WELCOME模式");
-            secWebSocketKey = serverSendBean.secWebSocketKey;
+            secWebSocketKey = Signalman.secWebSocketKey;
 //            System.out.println("欢迎进入");
             msgList.add("欢迎进入");
             chatHandler.sendMessage(getMessage(0x111, msgList));
             return;
         }
-        if ("COMMON".equals(serverSendBean.MODE)) {
+        if ("COMMON".equals(Signalman.MODE)) {
             Log.e(TAG, "COMMON模式");
-            String msg = serverSendBean.msg == null ? "" : serverSendBean.msg;
+            String msg = Signalman.msg == null ? "" : Signalman.msg;
 //            System.out.println(msg);
             try {
                 msgList.add(msg);
@@ -53,7 +52,7 @@ public class MsgHandler {
             }
             return;
         }
-        if ("CLOSE".equals(serverSendBean.MODE)) {
+        if ("CLOSE".equals(Signalman.MODE)) {
 //            System.out.println("连接即将关闭");
             return;
         }

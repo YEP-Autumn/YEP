@@ -22,7 +22,7 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.YEP"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"><!--使用明文通讯（支持HTTP协议）-->
         <activity
             android:name="com.example.chat.ChatP2PActivity"
             android:exported="true" />

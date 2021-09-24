@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,7 +30,7 @@ public class OpenScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_property_animation);
-        intent = new Intent(OpenScreenActivity.this,MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        intent = new Intent(getLayoutInflater().getContext(),MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
 
         objectAnimator = ObjectAnimator.ofFloat((ImageView)findViewById(R.id.image_view),"alpha",0f, 1f)
                 .setDuration(3000);

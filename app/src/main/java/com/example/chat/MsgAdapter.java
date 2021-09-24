@@ -51,6 +51,7 @@ public class MsgAdapter extends RecyclerView.Adapter<MsgAdapter.MsgAdapterHandle
         public MsgAdapterHandler(@NonNull View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.msg_item);
+            textView.setBackground(context.getDrawable(R.drawable.shape));
         }
     }
 }

@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.widget.Toast;
 
 import com.example.lapace.R;
@@ -36,7 +37,7 @@ public class ChatP2PActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.chat_msg_view);
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
 
-        msgAdapter = new MsgAdapter(null, getApplicationContext());
+        msgAdapter = new MsgAdapter(null, getLayoutInflater().getContext());
         recyclerView.setAdapter(msgAdapter);
 
         handler = new ChatHandler(Looper.myLooper(), new Handler.Callback() {
@@ -45,7 +46,7 @@ public class ChatP2PActivity extends AppCompatActivity {
                 Log.e(TAG, "handleMessage:");
                 switch (message.what) {
                     case 0x000:
-                        Toast.makeText(getApplicationContext(), (String) message.obj, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getLayoutInflater().getContext(), (String) message.obj, Toast.LENGTH_SHORT).show();
                         break;
                     default:
                         msgAdapter.setMsg((List<String>) message.obj);
@@ -59,6 +60,20 @@ public class ChatP2PActivity extends AppCompatActivity {
         startClient();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (webSocketClient.isFlushAndClose()) {
+            return;
+        }
+        webSocketClient.close();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+//        webSocketClient.close();
+    }
 
     private void startClient() {
         new Thread(() -> {
