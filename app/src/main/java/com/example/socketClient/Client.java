@@ -9,14 +9,15 @@ public class Client {
     HashMap<String, String> map = new HashMap<>();
     WebSocketClient webSocket = null;
 
-    public Client(String userId) {
+    public Client(String userId,String friendId) {
         map.put("userId", userId);
+        map.put("friendId", friendId);
     }
 
     public synchronized WebSocketClient getWebSocket() {
         if (webSocket == null) {
             try {
-                webSocket = new WebSocketClient(new URI("ws://192.168.42.57:8788"), map);
+                webSocket = new WebSocketClient(new URI("ws://192.168.1.4:8788"), map);
             } catch (URISyntaxException e) {
                 e.printStackTrace();
             }

@@ -16,8 +16,7 @@ import android.widget.Toast;
 import com.example.lapace.R;
 import com.example.socketClient.Client;
 import com.example.socketClient.MsgHandler;
-
-import org.java_websocket.client.WebSocketClient;
+import com.example.socketClient.WebSocketClient;
 
 import java.util.List;
 
@@ -78,7 +77,7 @@ public class ChatP2PActivity extends AppCompatActivity {
     private void startClient() {
         new Thread(() -> {
             MsgHandler.setChatHandler(handler);
-            Client client = new Client("2017248646");
+            Client client = new Client("2017248646", "111");
             webSocketClient = client.getWebSocket();
             webSocketClient.connect();
             Log.e(TAG, "获得webSocketClient");

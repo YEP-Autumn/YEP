@@ -7,6 +7,11 @@ public class Signalman {
      * WELCOME: 欢迎模式，用户第一次上线时发送
      * COMMON: 普通模式，给指定用户发送未经加密的消息
      * CLOSE: 通知用户连接即将关闭
+     * ONLINE: 好友上线
+     * RECEIVED: 用户不在线，记录消息
+     * SIGN: 加密数据
+     * OFFLINE: 用户下线
+     *
      */
     public String MODE;
 
@@ -24,10 +29,23 @@ public class Signalman {
      */
 
     /**
-     * 用户自己的秘钥，用户消息发送失败时的反馈
+     * 用户的Sec-WebSocket-Key，用于用户消息发送失败时的反馈
      */
     public String mKey;
 
+    public Signalman(String MODE) {
+        this.MODE = MODE;
+    }
+
+    /**
+     * 标识消息来源
+     */
+    public final static String SOURCE = "SERVER";
+
+    /**
+     * 消息的发送方
+     */
+    public String who;
 
     public Signalman(String MODE, String msg, String secWebSocketKey) {
         this.MODE = MODE;
