@@ -20,6 +20,8 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:fontFamily">@font/zktchang</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:configChanges">orientation|screenSize</item>
     </style>
 
     <style name="Theme.YEP.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

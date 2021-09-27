@@ -4,6 +4,7 @@ package com.example.socketClient;
 import android.util.Log;
 
 import com.google.gson.Gson;
+
 import org.java_websocket.drafts.Draft;
 import org.java_websocket.handshake.ServerHandshake;
 
@@ -40,19 +41,17 @@ public class WebSocketClient extends org.java_websocket.client.WebSocketClient {
     }
 
 
-
     @Override
     public void onMessage(String s) {
+        Log.e(TAG, "onMessage: " + s);
         MsgHandler.onMessage(s);
     }
-
 
 
     @Override
     public void onClose(int i, String s, boolean b) {
         MsgHandler.close(i, s, b);
     }
-
 
 
     @Override

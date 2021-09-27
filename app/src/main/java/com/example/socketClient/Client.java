@@ -17,7 +17,7 @@ public class Client {
     public synchronized WebSocketClient getWebSocket() {
         if (webSocket == null) {
             try {
-                webSocket = new WebSocketClient(new URI("ws://192.168.1.4:8788"), map);
+                webSocket = new WebSocketClient(new URI("ws://81.68.81.151:8788"), map);
             } catch (URISyntaxException e) {
                 e.printStackTrace();
             }

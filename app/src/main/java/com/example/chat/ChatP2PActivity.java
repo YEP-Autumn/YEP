@@ -29,20 +29,13 @@ public class ChatP2PActivity extends AppCompatActivity {
     MsgAdapter msgAdapter;
     private String TAG = "YEP";
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat_p2_pactivity);
-        recyclerView = findViewById(R.id.chat_msg_view);
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
-
-        msgAdapter = new MsgAdapter(null, getLayoutInflater().getContext());
-        recyclerView.setAdapter(msgAdapter);
-
+    protected void onStart() {
+        super.onStart();
         handler = new ChatHandler(Looper.myLooper(), new Handler.Callback() {
             @Override
             public boolean handleMessage(@NonNull Message message) {
-                Log.e(TAG, "handleMessage:");
                 switch (message.what) {
                     case 0x000:
                         Toast.makeText(getLayoutInflater().getContext(), (String) message.obj, Toast.LENGTH_SHORT).show();
@@ -60,11 +53,25 @@ public class ChatP2PActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_chat_p2_pactivity);
+        recyclerView = findViewById(R.id.chat_msg_view);
+        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
+
+        msgAdapter = new MsgAdapter(null, getLayoutInflater().getContext());
+        recyclerView.setAdapter(msgAdapter);
+
+
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         if (webSocketClient.isFlushAndClose()) {
             return;
         }
+        Log.e(TAG, "onDestroy: ");
         webSocketClient.close();
     }
 
@@ -75,12 +82,12 @@ public class ChatP2PActivity extends AppCompatActivity {
     }
 
     private void startClient() {
+        Log.e(TAG, "startClient: ");
         new Thread(() -> {
             MsgHandler.setChatHandler(handler);
-            Client client = new Client("2017248646", "111");
+            Client client = new Client("2017248646", "2222");
             webSocketClient = client.getWebSocket();
             webSocketClient.connect();
-            Log.e(TAG, "获得webSocketClient");
         }).start();
     }
 

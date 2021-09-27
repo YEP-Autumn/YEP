@@ -1,5 +1,8 @@
 package com.example.bean;
 
+
+import java.util.List;
+
 public class Signalman {
 
     /**
@@ -11,11 +14,12 @@ public class Signalman {
      * RECEIVED: 用户不在线，记录消息
      * SIGN: 加密数据
      * OFFLINE: 用户下线
-     *
      */
     public String MODE;
 
     public String msg;
+
+    public List<Chat> messages;
 
     public String secWebSocketKey;
 
@@ -50,6 +54,12 @@ public class Signalman {
     public Signalman(String MODE, String msg, String secWebSocketKey) {
         this.MODE = MODE;
         this.msg = msg;
+        this.secWebSocketKey = secWebSocketKey;
+    }
+
+    public Signalman(String MODE, List<Chat> messages, String secWebSocketKey) {
+        this.MODE = MODE;
+        this.messages = messages;
         this.secWebSocketKey = secWebSocketKey;
     }
 
