@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.notification.NotifyActivity">
+    tools:context="com.laplace.notification.NotifyActivity">
 
     <Button
         android:text="第一种通知"

@@ -6,7 +6,7 @@
     android:orientation="horizontal">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical">
@@ -29,11 +29,11 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical"
-        tools:context=".MainActivity">
+        tools:context="com.laplace.lapace.MainActivity">
 
         <TextView
             android:layout_width="87dp"
@@ -79,18 +79,27 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            android:text="Recycler视图" />
+            android:text="Recycler\n视图" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_weight="1">
         <Button
+            android:text="聊天"
             android:id="@+id/chat_page"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+        <Button
+            android:text="MQTT客户端"
+            android:id="@+id/MQTT_Client"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:layout_gravity="center" />
     </LinearLayout>
 </LinearLayout>
