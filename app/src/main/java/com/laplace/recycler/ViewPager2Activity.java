@@ -19,11 +19,11 @@ public class ViewPager2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_pager2);
         List<Drawable> list = new ArrayList<>();
-        list.add(getDrawable(R.drawable.p1));
-        list.add(getDrawable(R.drawable.p2));
-        list.add(getDrawable(R.drawable.p3));
-        list.add(getDrawable(R.drawable.p4));
+        list.add(getResources().getDrawable(R.drawable.p1));
+        list.add(getResources().getDrawable(R.drawable.p2));
+        list.add(getResources().getDrawable(R.drawable.p3));
+        list.add(getResources().getDrawable(R.drawable.p4));
         ViewPager2 viewPager2 = findViewById(R.id.view_pager2);
-        viewPager2.setAdapter(new ViewPager2AdapterDemo(getApplicationContext(),list));
+        viewPager2.setAdapter(new ViewPager2AdapterDemo(getLayoutInflater().getContext(), list));
     }
 }

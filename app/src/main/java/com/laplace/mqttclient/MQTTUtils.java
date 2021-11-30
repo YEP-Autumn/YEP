@@ -78,4 +78,12 @@ public class MQTTUtils {
             }
         });
     }
+
+    public static void unSubscribe(String topic)  {
+        try {
+            client.unsubscribe(topic);
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
+    }
 }

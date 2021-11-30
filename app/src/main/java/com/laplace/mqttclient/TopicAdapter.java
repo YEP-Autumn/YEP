@@ -3,6 +3,7 @@ package com.laplace.mqttclient;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,13 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.laplace.bean.TopicStr;
 import com.example.lapace.R;
 
+import java.sql.Timestamp;
 import java.util.List;
-import java.util.function.Consumer;
 
 public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.ViewHolder> {
 
     private Context context;
-    public List<TopicStr> topics;
+    private List<TopicStr> topics;
 
     public TopicAdapter(Context context, List<TopicStr> topics) {
         this.context = context;
@@ -52,6 +53,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.ViewHolder> 
         TextView topic;
         TextView qoS;
         TextView message;
+        Button button;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -59,12 +61,24 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.ViewHolder> 
             topic = itemView.findViewById(R.id.topic_name);
             qoS = itemView.findViewById(R.id.qoS);
             message = itemView.findViewById(R.id.new_message);
+            button = itemView.findViewById(R.id.un_subscribe);
             message.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (topicHandler != null) {
-                        topicHandler.setTopicOnclickListener(name.getText().toString());
+//                        topicHandler.setMessageOnclickListener(name.getText().toString());
+                        topicHandler.setMessageOnclickListener(topics.get(getBindingAdapterPosition()).getTopic(), topics.get(getBindingAdapterPosition()).getMessagesList());
                     }
+                }
+            });
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (topicHandler != null) {
+                        topicHandler.setUnSubscribe(topics.get(getBindingAdapterPosition()).getTopic(), getBindingAdapterPosition());
+                    }
+                    topics.remove(getBindingAdapterPosition());
+                    notifyItemRemoved(getBindingAdapterPosition());
                 }
             });
         }
@@ -81,10 +95,16 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.ViewHolder> 
             TopicStr tS = topics.get(i);
             if (tS.getTopic().equals(topicStr.getTopic())) {
                 tS.setMessage(topicStr.getMessage());
+                tS.addMessage(new Timestamp(System.currentTimeMillis()), topicStr.getMessage());
                 topics.set(i, tS);
                 break;
             }
         }
+    }
 
+    public boolean add(TopicStr str) {
+        if (topics.contains(str)) return false;
+        topics.add(str);
+        return true;
     }
 }

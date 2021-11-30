@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="35dp">
 
     <TextView
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:ellipsize="marquee"
+        android:focusable="true"
         android:gravity="center"
+
+        android:singleLine="true"
         android:textSize="25sp" />
 
     <TextView
@@ -16,7 +20,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:ellipsize="marquee"
+        android:focusable="true"
         android:gravity="center"
+        android:singleLine="true"
+
         android:textSize="25sp" />
 
     <TextView
@@ -24,14 +32,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:ellipsize="marquee"
+        android:focusable="true"
         android:gravity="center"
+        android:singleLine="true"
         android:textSize="25sp" />
 
     <TextView
         android:id="@+id/new_message"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:gravity="center"
+        android:singleLine="true"
         android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/un_subscribe"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:text="取消订阅"
+        android:textSize="4sp" />
 </LinearLayout>

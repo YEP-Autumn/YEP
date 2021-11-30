@@ -1,6 +1,9 @@
 package com.laplace.bean;
 
-import lombok.Data;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class TopicStr {
 
@@ -12,11 +15,26 @@ public class TopicStr {
 
     String message;
 
+    List<Message> messagesList = new ArrayList<>();
+
+    public List<Message> getMessagesList() {
+        return messagesList;
+    }
+
+    public void setMessagesList(List<Message> messagesList) {
+        this.messagesList = messagesList;
+    }
+
+    public TopicStr() {
+
+    }
+
     public TopicStr(String name, String topic, int qoS, String message) {
         this.name = name;
         this.topic = topic;
         this.qoS = qoS;
         this.message = message;
+
     }
 
     public TopicStr(String topic, String message) {
@@ -54,5 +72,9 @@ public class TopicStr {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public void addMessage(Timestamp timestamp, String message) {
+        this.messagesList.add(new Message(timestamp, message));
     }
 }
