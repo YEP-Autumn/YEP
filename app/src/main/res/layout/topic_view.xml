@@ -10,10 +10,13 @@
         android:layout_weight="1"
         android:ellipsize="marquee"
         android:focusable="true"
+        android:focusableInTouchMode="true"
         android:gravity="center"
-
+        android:layout_gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
         android:singleLine="true"
-        android:textSize="25sp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/topic_name"
@@ -22,10 +25,13 @@
         android:layout_weight="1"
         android:ellipsize="marquee"
         android:focusable="true"
+        android:focusableInTouchMode="true"
         android:gravity="center"
+        android:layout_gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
         android:singleLine="true"
-
-        android:textSize="25sp" />
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/qoS"
@@ -34,9 +40,13 @@
         android:layout_weight="1"
         android:ellipsize="marquee"
         android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_gravity="center"
         android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
         android:singleLine="true"
-        android:textSize="25sp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/new_message"
@@ -45,18 +55,22 @@
         android:layout_weight="1"
         android:ellipsize="marquee"
         android:focusable="true"
+        android:layout_gravity="center"
+        android:focusableInTouchMode="true"
         android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
         android:singleLine="true"
-        android:textSize="25sp" />
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/un_subscribe"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:layout_gravity="center"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
         android:layout_weight="1"
-        android:layout_gravity="center"
         android:text="取消订阅"
-        android:textSize="4sp" />
+        android:textSize="6sp" />
 </LinearLayout>

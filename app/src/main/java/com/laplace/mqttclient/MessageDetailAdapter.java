@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.lapace.R;
 import com.laplace.bean.Message;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 
@@ -38,7 +39,8 @@ public class MessageDetailAdapter extends RecyclerView.Adapter<MessageDetailAdap
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Message message = messageList.get(position);
-        holder.time.setText(message.getTimestamp().toString());
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd HH:mm:ss");
+        holder.time.setText(simpleDateFormat.format(message.getTimestamp()));
         holder.message.setText(message.getMessage());
     }
 
